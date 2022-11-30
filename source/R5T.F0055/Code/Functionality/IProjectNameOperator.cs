@@ -18,6 +18,13 @@ namespace R5T.F0055
 			return output;
 		}
 
+		public string GetConsoleProjectName_FromSolutionName(string solutionName)
+		{
+			// The console project should have the same name as the solution.
+			var consoleProjectName = solutionName;
+			return consoleProjectName;
+		}
+
 		public string GetConstructionProjectName(string projectName)
 		{
 			var constructionProjectName = this.AppendToken(
