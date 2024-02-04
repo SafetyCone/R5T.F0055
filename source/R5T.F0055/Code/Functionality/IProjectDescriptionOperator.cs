@@ -40,7 +40,7 @@ namespace R5T.F0055
             return libraryConstructionProjectDescription;
         }
 
-        public string GetProjectDescription_FromLibraryDescription(string libraryDescription)
+        public string Get_ProjectDescription_FromLibraryDescription(string libraryDescription)
         {
             // The project should have the same description as the library.
             var projectDescription = libraryDescription;

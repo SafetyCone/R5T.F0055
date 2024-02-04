@@ -8,11 +8,11 @@ namespace R5T.F0055
 	[FunctionalityMarker]
 	public partial interface IProjectNameOperator : IFunctionalityMarker
 	{
-		public string AppendToken(
+		public string Append_Token(
 			string projectName,
 			string token)
 		{
-			var tokenSeparator = this.GetTokenSeparator();
+			var tokenSeparator = this.Get_TokenSeparator();
 
 			var output = $"{projectName}{tokenSeparator}{token}";
 			return output;
@@ -34,7 +34,7 @@ namespace R5T.F0055
 
         public string GetConsoleLibraryProjectName_FromConsoleProjectName(string consoleProjectName)
         {
-            var consoleLibraryProjectName = this.AppendToken(
+            var consoleLibraryProjectName = this.Append_Token(
 				consoleProjectName,
 				Instances.ProjectNameTokens.Library);
 
@@ -58,7 +58,7 @@ namespace R5T.F0055
 
         public string GetLibraryConstructionProjectName_FromLibraryProjectName(string libraryProjectName)
         {
-            var constructionProjectName = this.AppendToken(
+            var constructionProjectName = this.Append_Token(
                 libraryProjectName,
                 Instances.ProjectNameTokens.Construction);
 
@@ -82,7 +82,7 @@ namespace R5T.F0055
 
         public string GetWebServerProjectName_FromLibraryName(string libraryName)
         {
-            var webServerProjectName = this.AppendToken(
+            var webServerProjectName = this.Append_Token(
                 libraryName,
                 Instances.ProjectNameTokens.Server);
 
@@ -91,7 +91,7 @@ namespace R5T.F0055
 
         public string GetWebBlazorClientProjectName_FromLibraryName(string libraryName)
         {
-            var webBlazorClientProjectName = this.AppendToken(
+            var webBlazorClientProjectName = this.Append_Token(
                 libraryName,
                 Instances.ProjectNameTokens.Client);
 
@@ -100,28 +100,28 @@ namespace R5T.F0055
 
         public string GetConstructionProjectName(string projectName)
 		{
-			var constructionProjectName = this.AppendToken(
+			var constructionProjectName = this.Append_Token(
 				projectName,
 				Instances.ProjectNameTokens.Construction);
 
 			return constructionProjectName;
 		}
 
-		public string GetProjectName_FromUnadjustedLibraryName(string unadjustedLibraryName)
+		public string Get_ProjectName_FromUnadjustedLibraryName(string unadjustedLibraryName)
 		{
 			// Project name is just the unadjusted library name. No adjustments needed.
 			var projectName = unadjustedLibraryName;
 			return projectName;
 		}
 
-        public string GetProjectName_FromLibraryName(string unadjustedLibraryName)
+        public string Get_ProjectName_FromLibraryName(string unadjustedLibraryName)
         {
             // Project name is just the library name. No adjustments needed.
             var projectName = unadjustedLibraryName;
             return projectName;
         }
 
-        public string GetTokenSeparator()
+        public string Get_TokenSeparator()
 		{
 			var tokenSeparator = Instances.Strings.Period;
 			return tokenSeparator;
