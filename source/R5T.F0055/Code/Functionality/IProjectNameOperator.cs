@@ -65,7 +65,7 @@ namespace R5T.F0055
             return constructionProjectName;
         }
 
-        public string GetLibraryConstructionProjectName_FromLibraryName(string libraryName)
+        public string Get_LibraryConstructionProjectName_FromLibraryName(string libraryName)
         {
 			var libraryProjectName = this.GetLibraryProjectName_FromLibraryName(libraryName);
 

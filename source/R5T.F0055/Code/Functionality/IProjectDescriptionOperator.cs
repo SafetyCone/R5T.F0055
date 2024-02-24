@@ -26,7 +26,7 @@ namespace R5T.F0055
             return webBlazorClientProjectDescription;
         }
 
-        public string GetLibraryConstructionProjectDescription_FromLibraryName(string libraryName)
+        public string Get_LibraryConstructionProjectDescription_FromLibraryName(string libraryName)
         {
             var libraryProjectName = ProjectNameOperator.Instance.GetLibraryProjectName_FromLibraryName(libraryName);
 
