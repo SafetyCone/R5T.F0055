@@ -73,14 +73,18 @@ namespace R5T.F0055
             return libraryConstructionProjectName;
         }
 
-		public string GetWebServerForBlazorClientProjectName_FromLibraryName(string libraryName)
+        /// <inheritdoc cref="Get_WebServerProjectName_FromLibraryName(string)"/>
+        public string Get_WebServerForBlazorClientProjectName_FromLibraryName(string libraryName)
 		{
-			var webServerForBlazorClientProjectName = this.GetWebServerProjectName_FromLibraryName(libraryName);
+			var webServerForBlazorClientProjectName = this.Get_WebServerProjectName_FromLibraryName(libraryName);
 
 			return webServerForBlazorClientProjectName;
 		}
 
-        public string GetWebServerProjectName_FromLibraryName(string libraryName)
+        /// <summary>
+        /// Includes the server name token with the given library name to get a the project name for a web server application.
+        /// </summary>
+        public string Get_WebServerProjectName_FromLibraryName(string libraryName)
         {
             var webServerProjectName = this.Append_Token(
                 libraryName,
@@ -89,7 +93,10 @@ namespace R5T.F0055
             return webServerProjectName;
         }
 
-        public string GetWebBlazorClientProjectName_FromLibraryName(string libraryName)
+        /// <summary>
+        /// Includes the client name token with the given library name to get a the project name for a Blazor client web application.
+        /// </summary>
+        public string Get_WebBlazorClientProjectName_FromLibraryName(string libraryName)
         {
             var webBlazorClientProjectName = this.Append_Token(
                 libraryName,

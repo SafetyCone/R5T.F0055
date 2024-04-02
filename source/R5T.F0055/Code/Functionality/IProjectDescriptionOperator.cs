@@ -1,5 +1,5 @@
 using System;
-using System.Net.Mail;
+
 using R5T.T0132;
 
 
@@ -8,7 +8,11 @@ namespace R5T.F0055
 	[FunctionalityMarker]
 	public partial interface IProjectDescriptionOperator : IFunctionalityMarker
 	{
-        public string GetWebServerForBlazorClientProjectDescription_FromLibraryName(string libraryName)
+        /// <summary>
+        /// Result:
+        /// <para>Server for the {library name} Blazor client.</para>
+        /// </summary>
+        public string Get_WebServerForBlazorClientProjectDescription_FromLibraryName(string libraryName)
         {
             var webServerForBlazorClientProjectDescription = $"Server for the {libraryName} Blazor client.";
             return webServerForBlazorClientProjectDescription;
@@ -20,7 +24,11 @@ namespace R5T.F0055
             return webServerForStaticRazorComponentsProjectDescription;
         }
 
-        public string GetWebBlazorClientProjectDescription_FromLibraryName(string libraryName)
+        /// <summary>
+        /// Result:
+        /// <para>Blazor client for the {library name} project.</para>
+        /// </summary>
+        public string Get_WebBlazorClientProjectDescription_FromLibraryName(string libraryName)
         {
             var webBlazorClientProjectDescription = $"Blazor client for the {libraryName} project.";
             return webBlazorClientProjectDescription;
